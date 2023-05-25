@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const _uri = "mongodb+srv://<username>:<password>@moviesapp1.wfog0le.mongodb.net/";
+const _uri = "mongodb+srv://username:pass@moviesapp1.wfog0le.mongodb.net/";
 const client = new MongoClient(_uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const dbCon = (coll, cb) => {
@@ -17,7 +17,7 @@ const dbCon = (coll, cb) => {
 dbCon('movies', async (db) => {
   try {
     const movie = await db.findOne();
-    console.log(movie);
+    // console.log(movie);
   } catch (error) {
     console.error(error);
   } finally {
